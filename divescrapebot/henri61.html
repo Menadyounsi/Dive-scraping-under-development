@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv='content-type' content='text/html;charset=UTF-8'>
+    <meta name='author' content='Rainer Mohr'>
+	<meta http-equiv="language" content="en">
+    <meta name='description' content="Logbook of henri61/  at divelogs">
+    <meta name='viewport' content='1050'>
+	<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="divelogs">
+
+    <title>divelogs - Logbook of henri61/</title>
+    
+	
+	<link rel='alternate' href='https://www.divelogs.de/log/henri61/' hreflang='de' />
+	<link rel='alternate' href='https://en.divelogs.de/log/henri61/' hreflang='en' />
+	<link rel='alternate' href='https://fr.divelogs.de/log/henri61/' hreflang='fr' />
+	<link rel='alternate' href='https://es.divelogs.de/log/henri61/' hreflang='es' />
+	<link rel='alternate' href='https://it.divelogs.de/log/henri61/' hreflang='it' />
+	<link rel='alternate' href='https://nl.divelogs.de/log/henri61/' hreflang='nl' />
+	<!--[if lt IE 10]>
+    <link rel='stylesheet' href='/css/divelogs3IE.css'>
+    <![endif]-->
+    <link rel='SHORTCUT ICON' href='https://www.divelogs.de/favicon.ico'>
+    <link rel='alternate' type='application/rss+xml' title='Divelogs 25 newest dives' href='/rssfeed.xml'>
+    <link rel='alternate' type='application/rss+xml' title='Divelogs News &amp; updates' href='/divelogs_news.xml'>
+	<script type='text/javascript' src='/js/jquery-1.8.2.min.js'></script>
+	<!-- <script type='text/javascript' src='/js/jquery_newsticker.js'></script> -->
+	<script type="text/javascript" src="/js/jquery-ui.min.js"></script> 
+	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.min.css">
+	<link rel='stylesheet' href='/css/divelogs4.css?v=4.4.0'>
+	<script type="text/javascript" src="/js/inlineedit.js"></script>
+	<script type="text/javascript" src="/js/jquery.poshytip.min.js"></script>
+	
+    <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.2.pack.js"></script> 
+	<link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox-1.3.2.css" media="screen">
+	
+	
+	<link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+        function setCookie(key, value) {
+            var expires = new Date();
+            expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+            document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
+        }			
+ 		
+		$(document).ready(function() {	
+			if(window.devicePixelRatio > 1 && document.cookie.indexOf("retina") == -1) {				
+				setCookie("retina", "true");
+			}
+		
+			var container = $(".loginmenu ul");
+			$(".loginmenu input").focus(function() {
+				container.addClass('stayvisible');
+			});		
+			$(document).mouseup(function (e)
+			{			    
+			    if (!container.is(e.target) && container.has(e.target).length === 0) {
+			        container.removeClass('stayvisible');
+			    }
+			});
+		}); 
+
+		function checkall(el, name)	{
+			 var c = el.checked;
+			 var box = el.form.elements[name];
+			 if(!box) return;
+			 for(var i = 0; i < box.length; i++) box[i].checked = c;
+		}
+
+		function clearsb(sb, standardvalue) {
+			if (sb.value == standardvalue)
+				sb.value = '';
+			else {
+				sb.focus();
+				sb.select();
+			}
+		}
+
+		var wait = '<br /><br /><center><img src="img/wait.gif"></center><br /><br />';
+		var lightboxopen = false;
+
+		$(document).keydown(function(event) {	
+			if (event.keyCode == 37 && $('#prevdive').length > 0 && keynav == true && lightboxopen==false) {
+				diveid = $('#prevdive').attr('rel');
+				ajaxchangepage(diveid);
+			}
+			if (event.keyCode == 39 && $('#nextdive').length > 0 && keynav == true && lightboxopen==false) {
+		        diveid = $('#nextdive').attr('rel');
+		        ajaxchangepage(diveid);
+			}
+		});
+
+		function ajaxchangepage(diveid) {
+		    $('#c_content').load("/dive/"+diveid+"&diveonly=1");   
+		    window.history.pushState(null,'','/dive/'+diveid); 
+		}
+
+    </script>	
+</head>
+<body>
+<div class="wrapper">
+	<a id='top'></a>
+    <div id="c_head">
+    	<div style='width:1050px; margin:auto; position:relative; padding:0px;'>
+    
+	        <nav id="nav" role="navigation">
+		        <ul class='dropdown'>
+		        	<!--<li><a href='/'><span class='sprite-white-home pad'></span> Home</a></li>-->
+		        	<li><a href='/register.php'><span class='sprite-white-register pad'></span> Register</a></li>
+		        	<li style='background-color: #FFA600; padding: 17px 8px 3px;'><a href='/groups'><div style='position: absolute; top:4px; left: 3px; color: #FF0000; font-weight: bold; font-size: 11px;'>New:</div><span class='sprite-white-buddyrel pad'></span> Groups</a></li>
+		        	<li class='firstmenu'><a href='/userlist.php'><span class='sprite-white-logbooks pad'></span> Logbooks <span class="arrow-down-white"></span></a>
+			        	<ul>
+			        		
+			        		<li><a href='/picturegallery.php'><span class='sprite-white-photos pad'></span> Picture galleries</a></li>
+			        		<li><a href='/videogallery.php'><span class='sprite-white-video pad'></span> Video galleries</a></li>
+			        		<li><a href='/explore.php'><span class='sprite-white-explore pad'></span> Explore</a></li>
+							<li><a href='/druckvorlage.php'><span class='sprite-white-print pad'></span> Print empty pages</a></li>
+			        	</ul>
+		        	</li>
+		        	<li class='loginmenu'><a href='#'>Login <span class='arrow-down-white'></span></a>
+						<ul><li>
+
+							<form action='' method='post' style='display:block; margin-left: 5px;'>
+								 Username:<br><input type='text' name='user' size='10' class='narrow shaded'><br>
+								 Password:<br><input type='password' name='pass' size='10' class='narrow shaded'><br>
+								 <input type='submit' name='login' value='login' class='' style='font-size: 11px; margin-top:3px;'><br><a href='/passwd.php'>Forgot password?</a>
+							</form>
+
+						</li></ul>
+						</li>		        </ul>
+	        </nav>		
+			<form action='/search.php' method='GET' style="float: right; padding: 16px 0 0 18px;">
+	            <div style='margin-right: 15px; display:inline-block; '>
+<a href='https://www.divelogs.de/log/henri61/'><span class='sprite-lang-de' style='padding-top: 4px;' title='de'></span></a>&nbsp;&nbsp;<span class='sprite-lang-en' style='padding-top: 4px;' title='en/us'></span>&nbsp;&nbsp;<a href='https://fr.divelogs.de/log/henri61/'><span class='sprite-lang-fr' style='padding-top: 4px;' title='fr'></span></a>&nbsp;&nbsp;<a href='https://nl.divelogs.de/log/henri61/'><span class='sprite-lang-nl' style='padding-top: 4px;' title='nl'></span></a>&nbsp;&nbsp;<a href='https://es.divelogs.de/log/henri61/'><span class='sprite-lang-es' style='padding-top: 4px;' title='es'></span></a>&nbsp;&nbsp;<a href='https://it.divelogs.de/log/henri61/'><span class='sprite-lang-it' style='padding-top: 4px;' title='it'></span></a></div>	            <input type='text' class='searchBox input shaded' name='search' style='color:#c0c0c0; text-decoration: none; width: 140px;' value='search dives...' onfocus="clearsb(this, 'search dives...'); this.style.color = '#000';">
+	        </form>
+			<div class="top_logo"><a href="/">divelogs <img src="/img/logo_top.png" style="height: 25px; vertical-align: top;" alt=""></a></div>
+	    </div>
+    </div>
+    <div id="container">
+username invalid - possible script injection detected, bye...
