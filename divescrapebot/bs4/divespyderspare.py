@@ -23,7 +23,7 @@ for link in soup.find_all("a"):
     link.get("href")"""
 
 #scrapes information contained within the <td><td2> containers from page
-g_data = soup.find_all("td", {"class": "td2"})
+dive_data = soup.find_all("td", {"class": "td2"})
 
 print "\n\n\n**************\n*"
 
@@ -34,13 +34,14 @@ try:
         #print "\nLocation:"
         #print g_data[((9*i)-7)].text
         #Formulae for cycling through specified items. appends to list
-        location = g_data[((9*i)-7)].text
+        location = dive_data[((9*i)-7)].text
         to_print.append(location)
         #print "\nDepth:"
         #print g_data[((9*i)-6)].text
-        depth = g_data[((9*i)-6)].text
+        depth = dive_data[((9*i)-6)].text
         to_print.append(depth)
-
+#Check file formula.txt in directory for formulae for different information
+#Pass if no more rows in the table to check.
 except:
     pass
 
