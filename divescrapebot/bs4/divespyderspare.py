@@ -22,15 +22,18 @@ for i in range(0, 20):
 for link in soup.find_all("a"):
     link.get("href")"""
 
+#scrapes information contained within the <td><td2> containers from page
 g_data = soup.find_all("td", {"class": "td2"})
 
 print "\n\n\n**************\n*"
 
 to_print = []
+#This will cycle through each line on the table searching within the defined parameters
 try:
     for i in range(0,1000):
         #print "\nLocation:"
         #print g_data[((9*i)-7)].text
+        #Formulae for cycling through specified items. appends to list
         location = g_data[((9*i)-7)].text
         to_print.append(location)
         #print "\nDepth:"

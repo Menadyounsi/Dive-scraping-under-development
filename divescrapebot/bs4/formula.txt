@@ -1,0 +1,13 @@
+for BS4 from: en.divelogs.de/log/<username>
+
+for use as value in g_data for loop to find specified columns
+
+Nr = 9n - 9
+When = 9n - 8
+Location = 9n - 7
+Depth = 9n - 6
+Duration = 9n - 5
+Graph = 9n - 4
+Photo = 9n - 3
+Videos = 9n - 2
+www = 9n - 1
